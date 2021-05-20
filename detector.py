@@ -13,11 +13,13 @@ ap.add_argument("-o", "--output", required=True,
 	help="path to our output video")
 ap.add_argument("-s", "--fps", type=int, default=30,
 	help="set fps of output video")
+ap.add_argument("-b", "--black", type=str, default=False,
+	help="set black background")
 args = vars(ap.parse_args())
 
 
 pTime = 0
-black_flag = False
+black_flag = eval(args["black"])
 cap = cv2.VideoCapture(args["input"])
 out = cv2.VideoWriter(args["output"], cv2.VideoWriter_fourcc(*"MJPG"), 
                       args["fps"], (int(cap.get(3)), int(cap.get(4))))
