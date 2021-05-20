@@ -1,6 +1,6 @@
 import cv2
 import time
-import PoseModule as pm
+import pose_estimation_class as pm
 import mediapipe as mp
 import argparse
 
